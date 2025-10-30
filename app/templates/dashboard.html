@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.webp') }}">
+        <title>Energy Trade Platform - Dashboard</title>
+        <meta name="description" content="Energy Trade Platform dashboard for managing power trading" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/signin.css') }}" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    </head>
+    <body>
+        <div class="dashboard">
+            <!-- Sidebar Navigation -->
+            <nav class="dashboard__sidebar">
+                <div class="dashboard__logo">
+                    <img src="{{ url_for('static', filename='images/logo.webp') }}" alt="Energy Trade Platform Logo" />
+                    <span>Energy Trade</span>
+                </div>
+                <ul class="dashboard__nav">
+                    <li class="dashboard__nav-item active">
+                        <a href="{{ url_for('dashboard.dashboard') }}">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="dashboard__nav-item">
+                        <a href="#">
+                            <i class="fas fa-bolt"></i>
+                            <span>Buy/Sell Power</span>
+                        </a>
+                    </li>
+                    <li class="dashboard__nav-item">
+                        <a href="#">
+                            <i class="fas fa-wallet"></i>
+                            <span>Wallet</span>
+                        </a>
+                    </li>
+                    <li class="dashboard__nav-item">
+                        <a href="#">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Activities</span>
+                        </a>
+                    </li>
+                    <li class="dashboard__nav-item">
+                        <a href="#">
+                            <i class="fas fa-history"></i>
+                            <span>History</span>
+                        </a>
+                    </li>
+                    <li class="dashboard__nav-item">
+                        <a href="#">
+                            <i class="fas fa-robot"></i>
+                            <span>AI Forecast</span>
+                        </a>
+                    </li>
+                    <li class="dashboard__nav-item">
+                        <a href="#">
+                            <i class="fas fa-users"></i>
+                            <span>Community</span>
+                        </a>
+                    </li>
+                    <li class="dashboard__nav-item">
+                        <a href="#">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="dashboard__main">
+                <!-- Top Header -->
+                <header class="dashboard__header">
+                    <div class="dashboard__search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search..." />
+                    </div>
+                    <div class="dashboard__user">
+                        <div class="dashboard__notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="dashboard__notification-badge">3</span>
+                        </div>
+                        <div class="dashboard__profile">
+                            <img src="{{ url_for('static', filename='images/avatar.webp') }}" alt="User Avatar" />
+                            <span>John Doe</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Dashboard Content -->
+                <div class="dashboard__content">
+                    <!-- Quick Stats -->
+                    <section class="dashboard__stats">
+                        <div class="stat-card">
+                            <div class="stat-card__icon" style="background-color: rgba(14, 161, 41, 0.1)">
+                                <i class="fas fa-bolt" style="color: #0ea129"></i>
+                            </div>
+                            <div class="stat-card__info">
+                                <h3>Total Power</h3>
+                                <p>1,234 kWh</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__icon" style="background-color: rgba(255, 159, 67, 0.1)">
+                                <i class="fas fa-dollar-sign" style="color: #ff9f43"></i>
+                            </div>
+                            <div class="stat-card__info">
+                                <h3>Balance</h3>
+                                <p>$2,345</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__icon" style="background-color: rgba(54, 162, 235, 0.1)">
+                                <i class="fas fa-exchange-alt" style="color: #36a2eb"></i>
+                            </div>
+                            <div class="stat-card__info">
+                                <h3>Transactions</h3>
+                                <p>156</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__icon" style="background-color: rgba(255, 99, 132, 0.1)">
+                                <i class="fas fa-chart-line" style="color: #ff6384"></i>
+                            </div>
+                            <div class="stat-card__info">
+                                <h3>Active Bids</h3>
+                                <p>12</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Recent Activity -->
+                    <section class="dashboard__activity">
+                        <div class="activity-card">
+                            <h2>Recent Activity</h2>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-item__icon">
+                                        <i class="fas fa-arrow-up" style="color: #0ea129"></i>
+                                    </div>
+                                    <div class="activity-item__details">
+                                        <h4>Sold Power</h4>
+                                        <p>100 kWh at $0.12/kWh</p>
+                                    </div>
+                                    <div class="activity-item__time">
+                                        2 hours ago
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-item__icon">
+                                        <i class="fas fa-arrow-down" style="color: #ff6384"></i>
+                                    </div>
+                                    <div class="activity-item__details">
+                                        <h4>Bought Power</h4>
+                                        <p>50 kWh at $0.10/kWh</p>
+                                    </div>
+                                    <div class="activity-item__time">
+                                        5 hours ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

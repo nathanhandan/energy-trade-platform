@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.webp') }}">
+    <title>Energy Trade Platform - Power the Future</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/logo.webp') }}" alt="Energy Trade Platform Logo" class="logo-image" style="width: 50px; height: auto;">
+                Energy Trade Platform
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="{{ url_for('auth.signin') }}" class="btn btn-outline">Login</a>
+                <a href="{{ url_for('auth.register') }}" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Buy. Sell. 
+                    <span>Power the Future.</span></h1>
+                <p>A decentralized platform where anyone can trade clean energy securely, transparently, and profitably.</p>
+                <div class="hero-buttons">
+                    <a href="{{ url_for('auth.signin') }}" class="btn btn-primary">Get Started</a>
+                    <a href="#how-it-works" class="btn btn-outline">Watch Demo</a>
+                </div>
+                <p class="hero-tagline">
+                    <i class="fas fa-check-circle" style="color: var(--secondary-hover);"></i>
+                    Empowering communities through peer-to-peer energy trading
+                </p>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-illustration">
+                    <i class="fas fa-bolt" style="font-size: 8rem; color: rgba(255,255,255,0.2);"></i>
+                </div>
+                <div class="floating-icon">
+                    <i class="fas fa-solar-panel" style="font-size: 2rem; color: #2563eb;"></i>
+                </div>
+                <div class="floating-icon">
+                    <i class="fas fa-chart-line" style="font-size: 2rem; color: #00C853;"></i>
+                </div>
+                <div class="floating-icon">
+                    <i class="fas fa-leaf" style="font-size: 2rem; color: var(--primary-color);"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="section-container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Three simple steps to start trading clean energy</p>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>Generate or Request Power</h3>
+                    <p>Connect your smart meter or energy device to start selling or buying power on the platform.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Bid & Trade Securely</h3>
+                    <p>Buy or sell energy instantly using our decentralized blockchain network with complete transparency.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Track & Earn in Real Time</h3>
+                    <p>Monitor your energy usage, forecast demand, and grow your income with advanced analytics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="section-container">
+            <h2 class="section-title">Why Choose Energy Trade Platform?</h2>
+            <p class="section-subtitle">Powerful features designed for modern energy trading</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Transparent Blockchain Transactions</h3>
+                    <p>Every trade is recorded on the blockchain, ensuring complete transparency and security.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI Forecasting for Better Pricing</h3>
+                    <p>Leverage machine learning algorithms to predict energy demand and optimize your pricing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Real-Time Usage Dashboard</h3>
+                    <p>Monitor your energy production and consumption with live updates and detailed analytics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community & Discussion Forum</h3>
+                    <p>Connect with other traders, share insights, and learn from the community.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Secure Digital Wallet</h3>
+                    <p>Manage your earnings with a built-in wallet that supports multiple payment methods.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Credit Score for Reliability</h3>
+                    <p>Build your reputation with our credit scoring system that rewards reliable traders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Preview -->
+    <section class="preview">
+        <div class="section-container">
+            <h2 class="section-title">Manage Everything in One Dashboard</h2>
+            <p class="section-subtitle">From power generation to bid tracking and wallet balance, manage it all in one interactive space</p>
+            <div class="dashboard-mockup">
+                <div class="mockup-header">
+                    <div class="mockup-dot" style="background: #ff0000;"></div>
+                    <div class="mockup-dot" style="background: rgb(253, 228, 0);"></div>
+                    <div class="mockup-dot" style="background: #0f0;"></div>
+                </div>
+                <div class="mockup-content">
+                    <img src="{{ url_for('static', filename='images/dashboard.webp') }}" alt="Dashboard Preview" style="width: 100%; height: auto; border-radius: 8px;">
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="#signup" class="btn btn-primary">View Demo Dashboard</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="community">
+        <div class="section-container">
+            <h2 class="section-title">Trusted by Energy Producers and Communities</h2>
+            <p class="section-subtitle">See what our users have to say about their experience</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">SM</div>
+                        <div class="testimonial-info">
+                            <h4>Sarah Mitchell</h4>
+                            <p>Solar Panel Owner</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"This platform transformed how I monetize my solar panels. I've earned over $5,000 in just three months while helping my community access clean energy."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">JC</div>
+                        <div class="testimonial-info">
+                            <h4>James Chen</h4>
+                            <p>Energy Trader</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"The AI forecasting feature is incredible. It helps me predict demand patterns and maximize profits. The blockchain transparency gives me complete peace of mind."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">MP</div>
+                        <div class="testimonial-info">
+                            <h4>Maria Patel</h4>
+                            <p>Community Manager</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Our community switched to this platform and reduced energy costs by 30%. The user-friendly interface and real-time analytics make energy trading accessible to everyone."</p>
+                </div>
+            </div>
+            <div class="stats-banner">
+                <div class="stat-item">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">Active Users</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500K+</div>
+                    <div class="stat-label">kWh Traded Monthly</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$2M+</div>
+                    <div class="stat-label">Total Earnings Distributed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="cta-content">
+            <h2>Ready to Join the Clean Energy Revolution?</h2>
+            <p>Start trading energy today and be part of a sustainable future</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="#signup" class="btn btn-primary" style="background: #fff; color: #2563eb;">Sign Up Now</a>
+                <a href="#login" class="btn btn-secondary">Login</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3><i class="fas fa-bolt"></i> Energy Trade Platform</h3>
+                    <p>Empowering communities through decentralized peer-to-peer energy trading. Join us in creating a sustainable and profitable energy future.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#how-it-works">About</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#cookies">Cookie Policy</a></li>
+                        <li><a href="#compliance">Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#api">API Documentation</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Energy Trade Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- index.js -->
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>

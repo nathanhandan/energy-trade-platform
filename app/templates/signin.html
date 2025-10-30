@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.webp') }}">
+    <title>Energy Trade Platform - Login</title>
+    <meta name="description" content="Login to Energy Trade Platform to buy and sell electric power" />
+    <!-- bootstrap5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signin.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flash.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  </head>
+  <body>
+    <div class="flash-container"></div>
+    <main class="login">
+      <aside class="login__hero" role="img" aria-label="Electric power transmission tower">
+        <img
+          class="login__hero-image"
+          src="{{ url_for('static', filename='images/login.webp') }}"
+          alt="Electric power transmission infrastructure"
+        />
+        <div class="login__hero-overlay"></div>
+      </aside>
+
+      <section class="login__container">
+        <div class="login__card">
+          <header class="login__header">
+            <h1 class="login__title">
+              <span class="login__title-welcome">Welcome to<br /></span>
+              <span class="login__title-brand">Energy Trade Platform</span>
+            </h1>
+            <nav class="login__nav" aria-label="Account navigation">
+              <p class="login__signup-link">
+                <span class="login__signup-text">Don't have an account?</span>
+                <span class="login__signup-space">&nbsp;</span>
+                <a href="{{ url_for('auth.register') }}" class="login__signup-action">Signup</a>
+              </p>
+            </nav>
+          </header>
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              <div class="flash-messages">
+                {% for category, message in messages %}
+                  <div class="flash-message {{ category }}" role="alert">
+                    <div class="flash-message-content">{{ message }}</div>
+                    <button type="button" class="flash-message-close" onclick="this.parentElement.remove()">&times;</button>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+          {% endwith %}
+          <p class="login__subtitle">Kindly login to Buy and Sell Electric Power</p>
+          <form class="login__form" action="#" method="post" novalidate>
+            <div class="login__form-group">
+              <label for="email" class="login__label">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="login__input"
+                required
+                autocomplete="email"
+                aria-required="true"
+                placeholder=""
+              />
+            </div>
+            <div class="login__form-group">
+              <label for="password" class="login__label">Password</label>
+              <div class="password-container">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="login__input"
+                  required
+                  autocomplete="current-password"
+                  aria-required="true"
+                  placeholder=""
+                />
+                <button type="button" class="toggle-password" onclick="togglePasswordVisibility('password', this)" aria-label="Show password">
+                  <span class="fa-solid fa-eye-slash"></span>
+                </button>
+              </div>
+            </div>
+            <div class="login__actions">
+              <button type="submit" class="login__button login__button--primary">
+                <span class="login__button-text">Login</span>
+              </button>
+              <button type="button" class="login__button login__button--secondary">Cancel</button>
+            </div>
+          </form>
+          <footer class="login__footer">
+            <p class="login__signup-link-bottom">
+              <span class="login__signup-text">Don't have an account?</span>
+              <span class="login__signup-space">&nbsp;</span>
+              <a href="#signup" class="login__signup-action">Signup</a>
+            </p>
+          </footer>
+        </div>
+      </section>
+    </main>
+    <script>
+      function togglePasswordVisibility(passwordFieldId, toggleButton) {
+        const passwordField = document.getElementById(passwordFieldId);
+        const icon = toggleButton.querySelector('span');
+        
+        if (passwordField.type === 'password') {
+          passwordField.type = 'text';
+          icon.classList.remove('fa-eye-slash');
+          icon.classList.add('fa-eye');
+          toggleButton.setAttribute('aria-label', 'Hide password');
+        } else {
+          passwordField.type = 'password';
+          icon.classList.remove('fa-eye');
+          icon.classList.add('fa-eye-slash');
+          toggleButton.setAttribute('aria-label', 'Show password');
+        }
+      }
+    </script>
+  </body>
+</html>

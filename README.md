@@ -231,8 +231,6 @@ Manages user profile, preferences, and security.
 ### 👥 Contributors
 
 * **Project Lead:** Nathaniel Handan
-* **Design & UI:** AI Bauchi Design Team
-* **Development:** KudiTraka & AI Bauchi Collaborators
 
 ---
 
